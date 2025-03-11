@@ -4,15 +4,72 @@ import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Cat;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
  * @author leon on 4/19/18.
  */
 public class CatTest {
-    // TODO - Create tests for `void setName(String name)`
-    // TODO - Create tests for `speak`
-    // TODO - Create tests for `setBirthDate(Date birthDate)`
+    @Test
+     public void catNameTest() {
+        //Given
+        String expectedName = "catName";
+        Date expectedBirthday = null;
+        Integer expectedID= null;
+        Cat cat = new Cat(expectedName, expectedBirthday, expectedID);
+
+        //When
+         String actualName = cat.getName();
+         Date actualBirthday = cat.getBirthDate();
+        Integer actualId= cat.getId();
+        //Then
+        Assert.assertEquals(actualName,expectedName);
+        Assert.assertEquals(actualBirthday, expectedBirthday);
+        Assert.assertEquals(actualId,expectedID);
+    }
+    @Test
+    public void speakTest(){
+        //Given
+        String expectedCatSpeak = "meow!";
+        String expectedName = "catName";
+        Date expectedBirthday = null;
+        Integer expectedID= null;
+        Cat cat = new Cat(expectedName, expectedBirthday, expectedID);
+        //When
+        String actualCatSpeak= cat.speak();
+        //Then
+        Assert.assertEquals(expectedCatSpeak, actualCatSpeak);
+
+    }
+    @Test
+    public void dateTest(){
+        //Given
+        String expectedCatSpeak = "meow!";
+        String expectedName = "catName";
+        Date expectedBirthday  = new Date();
+        Integer expectedID= null;
+        Cat cat = new Cat(expectedName, expectedBirthday, expectedID);
+        //When
+        Date actualDate = cat.getBirthDate();
+        //Then
+        Assert.assertEquals(expectedBirthday,actualDate);
+
+    }
+
+   @Test
+   void eaten(){
+       String expectedCatSpeak = "meow!";
+       String expectedName = "catName";
+       Date expectedBirthday  = new Date();
+       Integer expectedID= null;
+       Cat cat = new Cat(expectedName, expectedBirthday, expectedID);
+       ArrayList<food> =
+       //Given
+
+
+
+   }
     // TODO - Create tests for `void eat(Food food)`
     // TODO - Create tests for `Integer getId()`
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
